@@ -1,12 +1,15 @@
 pipeline {
     agent any
 
+    tools {
+
+
     stages {
-        stage('VM Node Version') {
+        stage('Install Dependencies') {
             steps {
                 sh '''
-                    node -v
-                    npm -v
+                    npm install --no-audit
+                    
                 '''
             }
         }
